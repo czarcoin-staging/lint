@@ -1,12 +1,9 @@
 FROM golangci/golangci-lint:latest
 
-RUN apt-get update
-RUN apt-get install tree
-
 VOLUME /source
 VOLUME /modcache
 
-COPY config.yaml   /lint/config.yaml
+COPY .golangci.yml /lint/.golangci.yml
 COPY entrypoint.sh /lint/entrypoint.sh
 
 WORKDIR /source
