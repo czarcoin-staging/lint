@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 export PATH=$GOPATH/bin:$PATH
 
@@ -30,3 +31,5 @@ if [ ! -f ".golangci.yml" ]; then
 fi
 
 golangci-lint run
+
+echo "# linters finished"
